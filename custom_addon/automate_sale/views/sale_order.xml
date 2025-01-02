@@ -1,0 +1,24 @@
+<odoo>
+    <record id="view_custom_sale_order_form1" model="ir.ui.view">
+        <field name="name">custom.sale.order.form</field>
+        <field name="model">sale.order</field>
+        <field name="inherit_id" ref="sale.view_order_form"/>
+        <field name="arch" type="xml">
+            <!-- Add a new Confirm and Check Stock button -->
+            <xpath expr="//button[@name='action_confirm']" position="replace">
+                <button id="automate_validate_order"
+                        string="Confirm and Check Stock"
+                        type="object"
+                        name="automate_validate_order"
+                        class="btn-primary"
+                        context="{'validate_analytic': True}"
+                        invisible="state != 'sent'"/>
+                <button string="Confirm and Check Stock"
+                        type="object"
+                        name="automate_validate_order"
+                        context="{'validate_analytic': True}"
+                        invisible="state != 'draft'"/>
+            </xpath>
+        </field>
+    </record>
+</odoo>

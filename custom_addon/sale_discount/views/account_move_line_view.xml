@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id="view_account_move_form_inherit_discount" model="ir.ui.view">
+        <field name="name">account.move.form.inherit.discount</field>
+        <field name="model">account.move</field>
+        <field name="inherit_id" ref="account.view_move_form"/>
+        <field name="arch" type="xml">
+            <!-- Add new column of Discount Amount in the invoice line tree after Tax field -->
+            <xpath expr="//notebook/page/field[@name='invoice_line_ids']/list/field[@name='tax_ids']" position="after">
+                <field name="discount_fixed" string="Discount Amount" optional="show"/>
+            </xpath>
+        </field>
+    </record>
+</odoo>

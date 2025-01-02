@@ -1,0 +1,13 @@
+
+<odoo>
+    <template id="report_account_invoice_document_template_inherit" inherit_id="account.report_invoice_document">
+        <xpath expr="//th[@name='th_priceunit']" position="after">
+            <th name="th_discount_amount" class="text-end text-nowrap">Discount Amount</th>
+        </xpath>
+        <xpath expr="//td[@name='td_price_unit']" position="after">
+            <td name="td_discount_amount" class="text-end">
+                <span t-field="line.discount_fixed"/>
+            </td>
+        </xpath>
+    </template>
+</odoo>
