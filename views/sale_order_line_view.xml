@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- Add Discount Amount field to Sale Order Line Tree View -->
+    <record id="sale_order_line_tree_discount_inherit" model="ir.ui.view">
+        <field name="name">sale.order.line.tree.discount.inherit</field>
+        <field name="model">sale.order</field>
+        <field name="inherit_id" ref="sale.view_order_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//notebook/page/field[@name='order_line']/list/field[@name='tax_id']" position="after">
+                <field name="discount_fixed" optional="show" />
+            </xpath>
+        </field>
+    </record>
+
+</odoo>

@@ -1,0 +1,13 @@
+
+<odoo>
+    <template id="report_purchase_order_document_inherit" inherit_id="purchase.report_purchaseorder_document">
+        <xpath expr="//th[@name='th_price_unit']" position="after">
+            <th name="th_discount_amount" class="text-end text-nowrap">Discount Amount</th>
+        </xpath>
+        <xpath expr="//td[span[@t-field='line.price_unit']]" position="after">
+            <td name="td_discount_amount" class="text-end">
+                <span t-field="line.discount_fixed"/>
+            </td>
+        </xpath>
+    </template>
+</odoo>
